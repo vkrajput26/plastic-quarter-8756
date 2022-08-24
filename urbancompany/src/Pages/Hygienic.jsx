@@ -1,12 +1,13 @@
-import {Box,Button,SimpleGrid,List,Image,Text,Heading,Select} from "@chakra-ui/react"
+import {Box,Button,SimpleGrid,List,Image,Text,Heading,Select,Input,Stack,InputGroup,InputLeftAddon} from "@chakra-ui/react"
 import {Link} from "react-router-dom"
 import Navbar from "../Common/Navbar"
+
 export default  function Hygienic(){
 
     return(
-        <SimpleGrid bg="black" color="white">
+        <SimpleGrid >
             <Navbar/>
-            <Box h="550px"  display="flex">
+            <Box h="550px"  display="flex" bg="black" color="white">
                 <Box w="50%">
                     <Image src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_19be5040.jpeg" alt="image" />
                 </Box>
@@ -29,6 +30,85 @@ export default  function Hygienic(){
                         </Box>
                 </Box>
             </Box>
+
+
+            <Box display="flex" mt="8%"> 
+                <Box w="50%" >
+                    <Heading>Why Urban Company?</Heading>
+                 <Box   mt="5%"  display="flex" justifyContent="space-around">
+                  
+                        <Image w="72px" h="72px" src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_29614d40.png" alt="hygenic image" />
+                    <Box >   
+                        <Text>Transparent pricing</Text>
+                        <Text>See fixed prices before you book. No hidden charges.</Text>
+                    </Box>
+                   
+                  </Box>
+
+           <Box  mt="5%"   display="flex" justifyContent="space-around">
+                  
+                  <Image w="72px" h="72px" src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_2cc7d0d0.png" alt="hygenic image" />
+               <Box >   
+                  <Text>Experts only</Text>
+                  <Text>Our professionals are well trained and have on-job expertise.</Text>
+               </Box>
+             
+            </Box>
+            <Box  mt="5%"   display="flex" justifyContent="space-around">
+                  
+                  <Image w="72px" h="72px" src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_2caafa00.png" alt="hygenic image" />
+               <Box>   
+                  <Text>Fully equipped</Text>
+                  <Text>We bring everything needed to get the job done well.</Text>
+               </Box>
+             
+            </Box>
+
+                </Box>
+
+                <Box w="50%" m="auto">
+                    <Box bg="#f5f9ff"  h="90%" w="70%">
+                        <Image ml="3rem" mt="15px" mb="35px" h="120px" w="110px" src="https://res.cloudinary.com/urbanclap/image/upload/q_20,f_auto/categories/category_v2/category_cb4d9130.png" alt="img" />
+                       <Box >
+                        <Heading>100% Quality Assured</Heading>
+                         <Text>If you don't love our service, we will make it right.</Text>
+                     </Box>
+                  </Box>
+
+                </Box>
+            </Box>
+
+
+            <Box  display="flex" mt="8rem">
+                <Box w="50%" >
+                      <Heading >Book professionals from your phone</Heading>    
+                      <br />
+
+                        <Text fontSize="20px">Enter your mobile number to get the App download link.</Text>
+                        <br />
+                        <Stack spacing={4}>
+                            <InputGroup>
+                                <InputLeftAddon children='+91' />
+                                <Input type='tel' placeholder='phone number' />
+                                <Button bg="black" color="white" >Send</Button>
+                            </InputGroup>
+                         </Stack>
+
+                         <Box display="flex" mt="5%" gap="2rem">
+                            <Image src="https://images.urbanclap.com/image/upload/categories/category_v2/category_7f907eb0.png" alt="img" w="140px" h="50px" />
+                            <Image  src="https://images.urbanclap.com/image/upload/categories/category_v2/category_7f741d10.png" alt="img" w="140px" h="50px" />
+                         </Box>
+                        
+                </Box>
+
+                <Box  w="50%"  m="auto" ml="4rem">
+                        <Box display="flex" gap="2rem" m="auto">
+                            <Image src="https://res.cloudinary.com/urbanclap/image/upload/w_300,f_auto/categories/category_v2/category_2d7045d0.png" alt="img" w="240px" h="500px" />
+                            <Image src="https://res.cloudinary.com/urbanclap/image/upload/w_350,f_auto/categories/category_v2/category_2d013050.png" alt="img" w="240px" h="500px" />
+                        </Box>
+                </Box>
+            </Box>
+
         </SimpleGrid>
     )
  
