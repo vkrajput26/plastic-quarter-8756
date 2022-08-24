@@ -1,10 +1,12 @@
 
-
+import {Link,Route,Routes} from "react-router-dom"
+import Hygienic from "../Pages/Hygienic"
 function Allroutes(){
 
     return(
-        <div>
-            Allroutes
-        </div>
+        <Routes>
+            <Route path="/" element={<Hygienic/>}/>
+        </Routes>
     )
 }
+export default Allroutes
