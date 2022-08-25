@@ -1,4 +1,4 @@
-
+import SimpleImageSlider from "react-simple-image-slider";
 import {Box,SimpleGrid,Heading,Select,Input,Image,Text} from "@chakra-ui/react"
 import {
     Breadcrumb,
@@ -7,13 +7,25 @@ import {
     BreadcrumbSeparator,
   } from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom"
+import { useState } from "react";
 
+const images = [
+    { url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/images/growth/luminosity/1660310539328-18c400.jpeg" },
+    { url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/images/growth/luminosity/1660827090958-70a2a6.png" },
+    { url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/images/growth/luminosity/1660824582522-21aa7b.jpeg" },
+    { url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/images/growth/luminosity/1660824572075-7ba017.png" },
+    { url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/images/growth/luminosity/1660824580151-f7cab3.jpeg" },
+    { url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/images/growth/luminosity/1660824583191-7ad79d.jpeg" },
+    { url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/images/growth/luminosity/1660827090290-1b1fc5.jpeg" },
+  ];
 export default function Home(){
     const navigate=useNavigate()
-
+    const [state,setState]=useState(images)
     const handlePage=()=>{
         navigate("/")
     }
+
+      console.log("state",state)
 
     return(
         <SimpleGrid>
@@ -115,6 +127,91 @@ export default function Home(){
                     <Text>Home Repairs</Text>
                 </Box>
           </Box>
+
+          
+          {/* <div>
+      <SimpleImageSlider
+        width={896}
+        height={504}
+        images={images}
+        showBullets={false}
+        showNavs={true}
+      />
+    </div> */}
+        {/* work here */}
+        <Box display="flex" gap="4rem"  >
+            {state?.map((item)=>{
+                return <Box  key={item.id}>
+                    <Image src={item.url} />
+                </Box>
+            })}
+        </Box>
+
+
+            
+          <Box textAlign="center" mt="100px" mb="100px">
+
+                <Heading>New Category Launches</Heading>
+         </Box>
+
+            <Box display="flex"  gap="2rem" ml="2rem" mr="2rem" textAlign="center">
+                <Box  >
+                    <Image  borderRadius="5%" w="466px" h="200px" src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/images/growth/luminosity/1646140576865-02aba1.jpeg" alt="img" />
+                    <br />
+                    <Text>Expert Counselling</Text>
+                </Box>
+                <Box>
+                    <Image borderRadius="5%" w="466px" h="200px" src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/bigpictures/carpenter.jpg" alt="img" />
+                    <br />
+                    <Text>Furniture Making, Upholstery & Polish</Text>
+                </Box>
+                <Box>
+                    <Image borderRadius="5%" w="466px" h="200px" src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/images/growth/home-screen/1635829954373-d05590.jpeg" alt="img" />
+                    <br />
+                    <Text>Air Purifier</Text>
+                </Box>
+                <Box>
+                    <Image borderRadius="5%" w="466px" h="200px" src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/images/supply/customer-app-supply/1643120136395-80523e.jpeg" alt="img" />
+                    <br />
+                    <Text>Buy RO Water Purifier</Text>
+                </Box>
+            </Box>
+
+
+            <Box textAlign="center" mt="100px" mb="100px">
+
+            <Heading>Best Offers</Heading>
+            <Text fontSize="18px" fontWeight="bold" color="gray.400">Hygienic & single-use products | low-contact services</Text>
+            </Box>
+
+<Box mb="120px" display="flex"  gap="2rem" ml="2rem" mr="2rem" textAlign="center">
+<Box  >
+    <Image  borderRadius="5%" w="466px" h="200px" src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/images/growth/home-screen/1615874646690-66ab68.jpeg" alt="img" />
+    <br />
+    <Text>Salon For Men</Text>
+    <h3 style={{color:"grey"}}>Flat ₹100 off</h3>
+</Box>
+<Box>
+    <Image borderRadius="5%" w="466px" h="200px" src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/images/supply/customer-app-supply/1606211470897-f4afbc.jpeg" alt="img" />
+    <br />
+    <Text>Massage For Men</Text>
+    <h3 style={{color:"grey"}}>Starts at ₹499</h3>
+</Box>
+<Box>
+    <Image borderRadius="5%" w="466px" h="200px" src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/category_v2/category_c0667020.png" alt="img" />
+    <br />
+    <Text>Geyser</Text>
+    <h3 style={{color:"grey"}}>Starts at ₹249</h3>
+
+</Box>
+<Box>
+    <Image borderRadius="5%" w="466px" h="200px" src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/images/growth/home-screen/1602245928963-5094c6.jpeg" alt="img" />
+    <br />
+    <Text>Home Painting</Text>
+    <h3 style={{color:"grey"}}>Consultation at ₹49</h3>
+</Box>
+</Box>
+
 
         </SimpleGrid>
     )
