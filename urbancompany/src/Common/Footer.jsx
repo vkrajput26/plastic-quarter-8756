@@ -1,12 +1,14 @@
 import {Box} from "@chakra-ui/react"
  import {Link} from "react-router-dom"
 export default function Footer(){
+    let style={marginBottom:"25px", display:"flex" ,
+    gap:"2rem", marginLeft:"4rem"  }
+    
 
     return(
         <>
         <div style={{background:"black", color:"white" ,height:"200px"}}>
-            <ul style={{display:"flex",justifyContent:"space-between" ,
-            gap:"2rem", marginLeft:"4rem"  }}>
+            <ul style={style}>
                 <Link to="#">About Us</Link>
                 <li>UC Impact</li>
                 <li>Terms & Conditions</li>
@@ -23,6 +25,16 @@ export default function Footer(){
                 <li>Quick Links</li>
 
             </ul>
+            <hr />
+
+            <div>
+                <h4 style={{marginBottom:"25px"}}>Serving In</h4>
+                <span >Aus</span>
+              <ul style={style}>
+                <Link to="#">Melbourne</Link>
+                <li>Sydney</li>
+              </ul>
+            </div>
         </div>
         </>
     )

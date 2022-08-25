@@ -1,11 +1,23 @@
 import {Box,Button,SimpleGrid,List,Image,Text,Heading,Select,Input,Stack,InputGroup,InputLeftAddon} from "@chakra-ui/react"
 import { useState } from "react"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 
 export default  function Hygienic(){
+    
     const [cityName,setCityName]=useState("")
+    const navigate = useNavigate();
+
+    const handleCity=(e)=>{
+        setCityName(e.target.value)
+       
+        setInterval(() => {
+            navigate("/home")
+        }, 2000);
+    }
+    
     console.log(cityName,"cityName")
+
     return(
         <SimpleGrid >
          
@@ -23,7 +35,7 @@ export default  function Hygienic(){
                           
                             <Box ml="20px" bg="white" color="black" w="60%" border="1px" h="120px" mt="15px">
                                 <Text mt="8px" mb="8px">Where do you need a service?</Text>
-                                <Select placeholder='Select your city' value={cityName} onChange={(e)=>setCityName(e.target.value)} >
+                                <Select placeholder='Select your city' value={cityName} onChange={handleCity} >
                                     <option value='Agra'><Link to="#">Agra</Link></option>
                                     <option value='Delhi'><Link to="#">Delhi</Link></option>
                                     <option value='Pune'><Link to="#">Pune</Link></option>
