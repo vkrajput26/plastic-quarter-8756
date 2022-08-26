@@ -1,7 +1,34 @@
-import {Box,Button,SimpleGrid,List,Image} from "@chakra-ui/react"
-import {Link} from "react-router-dom"
+import {Box,Button,SimpleGrid,List,Image,Input,Select} from "@chakra-ui/react"
+import {Link, useNavigate} from "react-router-dom"
+import {
+    Drawer,
+    DrawerBody,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+  } from '@chakra-ui/react'
+  import { useDisclosure } from '@chakra-ui/react'
+  import React from "react"
+import { useState } from "react"
+
+import LoginVerification from "../Pages/LoginVerificatoin"
+
 
 export default function Navbar(){
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const btnRef = React.useRef()
+    const [number,setNumber]= useState("")
+    const navigate=useNavigate()
+
+    const handlePNumber=(e)=>{
+        setNumber(e.target.value)
+    }
+    // console.log("num",number)
+
+  
 
     return(
         <SimpleGrid h="60px"  bg="black" color="white" display="flex" justifyContent="space-around">
@@ -13,7 +40,45 @@ export default function Navbar(){
           <Link to="#">Blog</Link>
           <Link  to="#">Register As A Professional</Link>
           <Link to="#">My Bookings</Link>
-          <Link to="#">Login/Logout</Link>
+          
+    <Button ref={btnRef} colorScheme='black'  onClick={onOpen}>
+        Login/Sign Up
+      </Button>
+      <Drawer
+        isOpen={isOpen}
+        placement='right'
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader> Please login to continue</DrawerHeader>
+
+          <DrawerBody>
+            <Box display="flex">
+                <Box display="flex" border="grey" w="70%" >
+                    <Image w="20px" h="13px" mt="14px"   src="https://cdn.britannica.com/97/1597-050-008F30FA/Flag-India.jpg" alt="img"/>
+                    <Select  border="none"  >
+                        <option value="+91">+91</option>
+                    </Select>
+                </Box>
+            <Input placeholder='Your Phone number' value={number} onChange={handlePNumber} />
+
+            </Box>
+            <Box textAlign="center">
+
+        <Link to="/LoginVerification"> <Button mt="45px" w="70%"  color="white" bg="black" >Continue</Button>    </Link>  
+           
+         
+      
+
+            </Box>
+          </DrawerBody>
+
+        </DrawerContent>
+      </Drawer>
+          
         </Box>
         </SimpleGrid>
     )
