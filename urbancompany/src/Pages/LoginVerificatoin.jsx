@@ -13,6 +13,7 @@ import {
   import React from "react"
 import { useState } from "react"
 import { PinInput, PinInputField } from '@chakra-ui/react'
+import { useNavigate,Link } from "react-router-dom"
 
 
 export default function LoginVerification() {
@@ -36,8 +37,10 @@ export default function LoginVerification() {
     
     
     <Box textAlign="center" mt="25px" >
+        <Link to="/home">
 
         <Button bg="black" color="white" w="25%">Login</Button>
+        </Link>
     </Box>
 
     </Box>
