@@ -2,9 +2,14 @@ import { useEffect } from "react"
 import { useState } from "react"
 import axios from "axios"
 import {Box,Text,Heading,Button,Image} from "@chakra-ui/react"
+import {Link, useNavigate} from "react-router-dom"
+import AddToCart from "./AddToCart"
+
 export default function MensGrooming(){
 
     const [data,setData]=useState([])
+
+    const [store,setStore]=useState([])
 
     useEffect(()=>{
         axios.get(`https://urbancompanydata.herokuapp.com/api/urbanmensdata`)
@@ -14,7 +19,19 @@ export default function MensGrooming(){
         .catch((err)=>{console.log(err)})
         
     },[])
-       console.log("datamens",data)
+    //    console.log("datamens",data)
+
+    const handleStore=(item)=>{
+        setStore([...store,item])
+    }
+
+    const handleAddtoCart=()=>{
+          
+        return <AddToCart store={store}/>
+    }
+
+    console.log("store",store)
+
     return <div>
 
         <Box h="350px">
@@ -63,10 +80,18 @@ export default function MensGrooming(){
         <br />
         <hr />
         <br />
+        <Box display="flex" justifyContent="flex-end">
+
+        <Link to="/AddToCart"> 
+        
+                    <Button bg="blue" color="white" onClick={handleAddtoCart} >View Cart </Button>
+        </Link>
+             </Box>
 
         {
             data?.map((el)=>{
-                return  <Box display="flex" mb="48px" w="80%" m="auto" >
+                return  <Box display="flex">
+                <Box display="flex" mb="48px" w="80%" m="auto" >
                 <Box w="60%" >
                     <Box>
                         <Box display="flex" gap="0.4rem" >
@@ -107,11 +132,22 @@ export default function MensGrooming(){
     
                 <Box m="auto" textAlign="center">
                         <Image src={el.image}  />
-                        <Button mt="1rem" bg="white" border="1px" color="blue">{el.addbutton}</Button>
+
+                       
+                        
+                        <Button mt="1rem" bg="white" border="1px" color="blue" onClick={()=>handleStore(el)} >{el.addbutton}</Button>
+                      
                 </Box>
              </Box>
+
+          
+
+             </Box> 
+
             })
         }
+
+        
         
 
     </div>
