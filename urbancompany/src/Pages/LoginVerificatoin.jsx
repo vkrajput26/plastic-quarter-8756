@@ -16,7 +16,8 @@ import { PinInput, PinInputField } from '@chakra-ui/react'
 
 
 export default function LoginVerification() {
-     alert("hi")
+    //  alert("hi")
+    
     return <Box h="300px" m="auto">
         <Box textAlign="center">
             <Heading>Enter verification code</Heading>
