@@ -22,7 +22,7 @@ export default function Home(){
     const navigate=useNavigate()
     const [state,setState]=useState(images)
     const handlePage=()=>{
-        navigate("/")
+        navigate("/MensGrooming")
     }
 
       console.log("state",state)
