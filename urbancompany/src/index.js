@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
-
+import CartState from "./Context/CartState"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <ChakraProvider>
+      <CartState>
+
     <App />
+      </CartState>
     </ChakraProvider>
     </BrowserRouter>
   </React.StrictMode>
