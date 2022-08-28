@@ -27,6 +27,13 @@ export default function Home(){
 
       console.log("state",state)
 
+      const  handleKeyPress=(event)=>{
+        if(event.key=="Enter")
+        {
+            navigate("/MensGrooming")
+        }
+    }
+
     return(
         <SimpleGrid>
         <Box backgroundPosition="50%" backgroundSize="cover" backgroundRepeat="no-repeat" h="552px" bgImage={"https://res.cloudinary.com/urbanclap/image/upload/images/growth/home-screen/1615375782838-f890f8.jpeg"}>
@@ -44,7 +51,7 @@ export default function Home(){
                 <br />
                 <Box  color="black" display="flex" gap="2rem">
                     <Select bg="white" w="25%" placeholder="Agra" ></Select>
-                    <Input bg="white"  placeholder="Search for services"/>
+                    <Input bg="white"  placeholder="Search for services" onKeyPress={handleKeyPress}/>
                 </Box>
                 <br />
 
