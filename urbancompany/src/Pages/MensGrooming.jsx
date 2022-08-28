@@ -4,12 +4,17 @@ import axios from "axios"
 import {Box,Text,Heading,Button,Image} from "@chakra-ui/react"
 import {Link, useNavigate} from "react-router-dom"
 import AddToCart from "./AddToCart"
+import CartContext from "../Context/CartContext"
+import { useContext } from "react"
 
 export default function MensGrooming(){
+
+    const {addToCart,state} =useContext(CartContext);
 
     const [data,setData]=useState([])
 
     const [store,setStore]=useState([])
+    console.log("state",state.cartItems)
 
     useEffect(()=>{
         axios.get(`https://urbancompanydata.herokuapp.com/api/urbanmensdata`)
@@ -135,7 +140,7 @@ export default function MensGrooming(){
 
                        
                         
-                        <Button mt="1rem" bg="white" border="1px" color="blue" onClick={()=>handleStore(el)} >{el.addbutton}</Button>
+                        <Button mt="1rem" bg="white" border="1px" color="blue" onClick={()=>addToCart(el)} >{el.addbutton}</Button>
                       
                 </Box>
              </Box>
