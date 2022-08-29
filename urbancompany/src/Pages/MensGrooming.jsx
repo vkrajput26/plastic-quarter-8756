@@ -6,6 +6,7 @@ import {Link, useNavigate} from "react-router-dom"
 import AddToCart from "./AddToCart"
 import CartContext from "../Context/CartContext"
 import { useContext } from "react"
+import ReactPlayer from 'react-player'
 
 export default function MensGrooming(){
 
@@ -15,9 +16,11 @@ export default function MensGrooming(){
 
     const [store,setStore]=useState([])
     console.log("state",state.cartItems)
+        //https://urbancompanyadv.herokuapp.com/api/urbanmensdata
 
+        //https://urbancompanydata.herokuapp.com/api/urbanmensdata
     useEffect(()=>{
-        axios.get(`https://urbancompanydata.herokuapp.com/api/urbanmensdata`)
+        axios.get(`https://urbancompanyadv.herokuapp.com/api/urbanmensdata`)
         .then((res)=>{
             setData(res.data)
         })
@@ -39,8 +42,8 @@ export default function MensGrooming(){
 
     return <div>
 
-        <Box h="350px">
-            <Box w="50%" m="auto" mt="5rem">
+        <Box h="450px" display="flex">
+            <Box w="40%" m="auto" mt="5rem">
                     <Button bg="white" color="black" border="1px">UC Safe</Button>
                         <br />
                         <Heading>Salon for Men</Heading>
@@ -51,8 +54,8 @@ export default function MensGrooming(){
                         </Box>
             </Box>
 
-            <Box w="50%">
-
+            <Box w="50%"  mt="2rem" mr="4rem">
+            <ReactPlayer  url='https://www.youtube.com/watch?v=0CUG6aCWRSo' />
             </Box>
         </Box>
 
@@ -111,7 +114,7 @@ export default function MensGrooming(){
                            </Box>
 
                             <Box display="flex" gap="0.4rem">
-                                 <Text>{el.price}</Text>
+                                 <Text>₹{el.price}</Text>
                                  <Text>. {el.time}</Text>           
                             </Box>
 
