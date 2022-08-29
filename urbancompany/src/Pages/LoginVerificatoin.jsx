@@ -17,7 +17,15 @@ import { useNavigate,Link } from "react-router-dom"
 
 
 export default function LoginVerification() {
-    //  alert("hi")
+        const [popup,setPopup]=useState(true)
+ 
+    // alert("hi")
+    const val = Math.floor(1000 + Math.random() * 9000);
+   // console.log(val,"otp")
+    if(popup==true){
+        alert(`OTP is ${val}`)
+        setPopup(false)
+    }
     
     return <Box h="300px" m="auto">
         <Box textAlign="center">
