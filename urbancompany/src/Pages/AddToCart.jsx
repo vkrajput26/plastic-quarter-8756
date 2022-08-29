@@ -15,7 +15,7 @@ export default function AddToCart(){
 
             const val=    cartItems.reduce((amount,item)=>
         
-            item.price + amount,0  
+           ( item.price) + amount,0  
          
             )
             console.log("val",val)
@@ -44,7 +44,7 @@ export default function AddToCart(){
                 <Button>1</Button>
                 <Button>+</Button>
             </Box>
-            <Text>{item.price}</Text>
+            <Text>₹{item.price}</Text>
             </Box>
         ))}
     </Box>
@@ -84,7 +84,7 @@ export default function AddToCart(){
                 <br />
                 <Box display="flex" justifyContent="space-between"  >
                     <Text>Item Total</Text>
-                    <Text>{val}</Text>
+                    <Text>₹{val}</Text>
                 </Box>
 
                 <Box mt="8px" display="flex" justifyContent="space-between"  >
@@ -96,7 +96,7 @@ export default function AddToCart(){
                 <br/>
                 <Box display="flex" justifyContent="space-between" >
                     <Text>Total</Text>
-                    <Text>{val}</Text>
+                    <Text>₹{val}</Text>
                 </Box>
 
                 <Box textAlign="center" mt="45px">
