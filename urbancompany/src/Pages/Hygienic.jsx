@@ -19,7 +19,7 @@ export default  function Hygienic(){
     console.log(cityName,"cityName")
 
     return(
-        <SimpleGrid >
+        <SimpleGrid columns={[1, 1, 1]} >
          
             <Box h="550px"  display="flex" bg="black" color="white">
                 <Box w="50%">
