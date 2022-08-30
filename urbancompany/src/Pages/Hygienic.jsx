@@ -25,17 +25,18 @@ export default  function Hygienic(){
                 <Box w="50%">
                     <Image src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_19be5040.jpeg" alt="image" />
                 </Box>
-                <Box w="50%">
-                        <Box   w="90%" mt="10%" >
+                <Box w="50%"  >
+                        <Box   w="90%" mt="10%"  ml="30px" >
                             <Text w="40%" fontWeight="400" fontSize="22px">URBAN COMPANY</Text>                 
                             <br />
                             <Heading >Quality home services, on demand</Heading>
                             <br />
-                            <Text fontSize="18px">Experienced,hand-picked Professionals to serve you at your doorstep</Text>
+                            <Text fontSize="18px">Experienced,hand-picked Professionals to serve you at your </Text>
+                            <Text fontSize="18px" >doorstep</Text>
                           
-                            <Box ml="20px" bg="white" color="black" w="60%" border="1px" h="120px" mt="15px">
-                                <Text mt="8px" mb="8px">Where do you need a service?</Text>
-                                <Select placeholder='Select your city' value={cityName} onChange={handleCity} >
+                            <Box borderRadius="8px" ml="20px" bg="white" color="black" w="60%" border="1px" h="120px" mt="15px">
+                                <Text mt="8px" mb="8px" ml="20px" fontWeight="bold" fontSize="22px" >Where do you need a service?</Text>
+                                <Select w="80%" m="auto" placeholder='Select your city' value={cityName} onChange={handleCity} >
                                     <option value='Agra'><Link to="#">Agra</Link></option>
                                     <option value='Delhi'><Link to="#">Delhi</Link></option>
                                     <option value='Pune'><Link to="#">Pune</Link></option>
@@ -46,7 +47,7 @@ export default  function Hygienic(){
             </Box>
 
 
-            <Box display="flex" mt="8%"> 
+            <Box display="flex" mt="8%"  > 
                 <Box w="50%" >
                     <Heading>Why Urban Company?</Heading>
                  <Box   mt="5%"  display="flex" justifyContent="space-around">
