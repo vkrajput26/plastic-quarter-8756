@@ -47,12 +47,12 @@ export default  function Hygienic(){
             </Box>
 
 
-            <Box display="flex" mt="8%"  > 
-                <Box w="50%" >
+            <Box display="flex" mt="8%"  w="100%" pl="40px" > 
+                <Box    >
                     <Heading>Why Urban Company?</Heading>
                  <Box   mt="5%"  display="flex" justifyContent="space-around">
                   
-                        <Image w="72px" h="72px" src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_29614d40.png" alt="hygenic image" />
+                        <Image  w="72px" h="72px" src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_29614d40.png" alt="hygenic image" />
                     <Box >   
                         <Text>Transparent pricing</Text>
                         <Text>See fixed prices before you book. No hidden charges.</Text>
@@ -60,51 +60,52 @@ export default  function Hygienic(){
                    
                   </Box>
 
-           <Box  mt="5%"   display="flex" justifyContent="space-around">
-                  
-                  <Image w="72px" h="72px" src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_2cc7d0d0.png" alt="hygenic image" />
-               <Box >   
-                  <Text>Experts only</Text>
-                  <Text>Our professionals are well trained and have on-job expertise.</Text>
-               </Box>
-             
-            </Box>
-            <Box  mt="5%"   display="flex" justifyContent="space-around">
-                  
-                  <Image w="72px" h="72px" src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_2caafa00.png" alt="hygenic image" />
-               <Box>   
-                  <Text>Fully equipped</Text>
-                  <Text>We bring everything needed to get the job done well.</Text>
-               </Box>
-             
-            </Box>
+                        <Box  mt="5%"   display="flex" justifyContent="space-around">
+                                
+                                <Image w="72px" h="72px" src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_2cc7d0d0.png" alt="hygenic image" />
+                            <Box >   
+                                <Text>Experts only</Text>
+                                <Text>Our professionals are well trained and have on-job expertise.</Text>
+                            </Box>
+                            
+                            </Box>
+                            <Box  mt="5%"   display="flex" justifyContent="space-around">
+                                
+                                <Image w="72px" h="72px" src="https://res.cloudinary.com/urbanclap/image/upload/q_40,f_auto/categories/category_v2/category_2caafa00.png" alt="hygenic image" />
+                            <Box>   
+                                <Text>Fully equipped</Text>
+                                <Text>We bring everything needed to get the job done well.</Text>
+                            </Box>
+                            
+                            </Box>
 
-                </Box>
-
-                <Box w="50%" m="auto">
-                    <Box bg="#f5f9ff"  h="90%" w="70%">
-                        <Image ml="3rem" mt="15px" mb="35px" h="120px" w="110px" src="https://res.cloudinary.com/urbanclap/image/upload/q_20,f_auto/categories/category_v2/category_cb4d9130.png" alt="img" />
-                       <Box >
-                        <Heading>100% Quality Assured</Heading>
-                         <Text>If you don't love our service, we will make it right.</Text>
                      </Box>
-                  </Box>
 
-                </Box>
+                            <Box w="50%" m="auto">
+                                <Box bg="#f5f9ff"  h="90%" w="70%">
+                                    <Image ml="3rem" mt="15px" mb="35px" h="120px" w="110px" src="https://res.cloudinary.com/urbanclap/image/upload/q_20,f_auto/categories/category_v2/category_cb4d9130.png" alt="img" />
+                                <Box >
+                                    <Heading>100% Quality Assured</Heading>
+                                    <Text>If you don't love our service, we will make it right.</Text>
+                                </Box>
+                            </Box>
+
+                            </Box>
             </Box>
 
 
-            <Box  display="flex" mt="8rem">
+            <Box  display="flex" mt="8rem" pl="40px">
                 <Box w="50%" >
-                      <Heading >Book professionals from your phone</Heading>    
+                      <Heading >Book professionals from your</Heading>  
+                      <Heading> phone</Heading>  
                       <br />
 
-                        <Text fontSize="20px">Enter your mobile number to get the App download link.</Text>
+                        <Text fontSize="20px" fontWeight="400" color="grey" >Enter your mobile number to get the App download link.</Text>
                         <br />
                         <Stack spacing={4}>
                             <InputGroup>
                                 <InputLeftAddon children='+91' />
-                                <Input type='tel' placeholder='phone number' />
+                                <Input type='tel' placeholder='phone number'   />
                                 <Button bg="black" color="white" >Send</Button>
                             </InputGroup>
                          </Stack>
