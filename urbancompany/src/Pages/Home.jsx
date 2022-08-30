@@ -35,7 +35,7 @@ export default function Home(){
     }
 
     return(
-        <SimpleGrid>
+        <SimpleGrid columns={[1, 1, 1]}>
         <Box backgroundPosition="50%" backgroundSize="cover" backgroundRepeat="no-repeat" h="552px" bgImage={"https://res.cloudinary.com/urbanclap/image/upload/images/growth/home-screen/1615375782838-f890f8.jpeg"}>
             <Box textAlign="center" w="50%" m="auto" mt="190px" color="white">
             <Breadcrumb  textAlign="center">
