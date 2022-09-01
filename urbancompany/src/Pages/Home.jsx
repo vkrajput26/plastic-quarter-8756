@@ -7,6 +7,7 @@ import {
     BreadcrumbSeparator,
   } from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom"
+import { Navigate } from "react-router-dom";
 import { useState } from "react";
 
 const images = [
@@ -30,6 +31,7 @@ export default function Home(){
       const  handleKeyPress=(event)=>{
         if(event.key=="Enter")
         {
+    
             navigate("/MensGrooming")
         }
     }
@@ -146,7 +148,7 @@ export default function Home(){
       />
     </div> */}
         {/* work here */}
-        <Box display="flex" gap="4rem"  >
+        <Box display="flex" gap="4rem" mt="40px" >
             {state?.map((item)=>{
                 return <Box  key={item.id}>
                     <Image src={item.url} />
