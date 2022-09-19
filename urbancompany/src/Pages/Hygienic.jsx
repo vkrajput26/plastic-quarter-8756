@@ -11,10 +11,10 @@ export default  function Hygienic(){
     const handleCity=(e)=>{
         setCityName(e.target.value)
        
-        setInterval(() => {
+       // setInterval(() => {
             navigate("/home")
-        }, 2000);
-    }
+       // }, 2000);
+    };
     
     console.log(cityName,"cityName")
 
