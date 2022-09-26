@@ -92,7 +92,9 @@ export default function MensGrooming(){
 
         <Link to="/AddToCart"> 
         
-                    <Button bg="blue" color="white" onClick={handleAddtoCart} >View Cart </Button>
+                    <Button
+                    
+                    bg="blue" color="white"   onClick={handleAddtoCart} >View Cart </Button>
         </Link>
              </Box>
 

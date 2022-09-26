@@ -39,6 +39,7 @@ export default function AddToCart(){
         { cartItems?.map((item)=>(
             <Box mb="22px" display="flex" justifyContent="space-between">
             <Text>{item.description}</Text>
+            <Image src={item.image}  />
             <Box >
                 <Button>-</Button>
                 <Button>1</Button>
